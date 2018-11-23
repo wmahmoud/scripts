@@ -154,9 +154,10 @@ module Puritan
 end
 
 module Puritan
-  BLACKLIST = [
-    %(star ruby)
-  ]
+  BLACKLIST = Regexp.union(
+    #%r[^star ruby],
+    %r[tiny (.*?) pearl],
+  )
 
   def self.find_container(param)
     GameObj.inv.find do |container|
@@ -181,7 +182,7 @@ module Puritan
   end
 
   def self.raw_gems()
-    @raw_gems.contents.select(&Filter.is_gem).reject do |gem| BLACKLIST.include?(gem.name) end
+    @raw_gems.contents.select(&Filter.is_gem).reject do |gem| gem.name =~ BLACKLIST end
   end
 
   def self.sung_gems()
