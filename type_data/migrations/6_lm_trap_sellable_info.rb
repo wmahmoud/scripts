@@ -1,5 +1,5 @@
 migrate :gemshop do
-  insert(:name, %{dark crystal})
+  insert(:name, %{small dark crystal})
   insert(:name, %{amethyst sphere})
   insert(:name, %{dark red sphere})
   insert(:name, %{emerald sphere})
@@ -11,11 +11,15 @@ migrate :gemshop do
 end
 
 migrate :pawnshop do
-  insert(:exclude, %{dark crystal})
+  insert(:exclude, %{small dark crystal})
 
   insert(:name, %{pair of small steel jaws})
   insert(:name, %{slender steel needle})
   insert(:name, %{green-tinted vial})
   insert(:name, %{thick glass vial})
   insert(:name, %{clear glass vial})
+end
+
+migrate :lm_trap do
+  insert(:name, %{small dark crystal})
 end

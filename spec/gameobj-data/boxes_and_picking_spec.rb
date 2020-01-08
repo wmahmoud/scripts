@@ -148,7 +148,7 @@ describe GameObj do
 
     describe "sellable at the gemshop" do
       [
-        %{dark crystal},
+        %{small dark crystal},
 
         %{amethyst sphere},
         %{dark red sphere},
