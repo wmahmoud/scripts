@@ -142,6 +142,7 @@ end
 
 def attack(number)
 	GameObj.npcs.shuffle.each { |npc|
+		next if npc.status =~ /dead|gone/
 		put "target ##{npc.id}"
 		if !(npc.status =~ /dead|gone/) && UserVars.tdusk[:attack_script] == true
 			start_script("#{Char.name}-duskattack")
