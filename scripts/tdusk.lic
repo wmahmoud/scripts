@@ -1191,6 +1191,8 @@ loop {
 			kill_time = total_time
 		end
 		put "STOP 1018" if Char.prof =~ /Bard/
+		waitcastrt?
+		fput "renew all" if Char.prof =~ /Bard/
 		if Char.name =~ /Nodyre/
 			put "store left"
 		end
